@@ -59,21 +59,18 @@ main {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space between images */
+  align-items: center;
 }
 
 .gallery-grid img {
-  width: 100%;
-  height: auto;
+  width: 100%;          /* full width of container */
+  height: auto;         /* keep original aspect ratio */
+  max-width: 800px;     /* don’t go too wide */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
 }
 
 ---- CONTACT ----
