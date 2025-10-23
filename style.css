@@ -72,10 +72,22 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
+.jagutanbg .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .jagutanbg img {
   width: 100%;
   max-width: 500px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jagutanbg p {
+  max-width: 500px;
+  line-height: 1.6;
 }
   
 .certificate {
