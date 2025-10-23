@@ -73,6 +73,12 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
+.jagutanbg img {
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
 .certificate {
   text-align: center;
   margin-top: 2rem;
@@ -85,8 +91,8 @@ main {
 }
 
 .certificate img {
-  width: 100%;
-  max-width: 600px;
+  width: 50%;
+  max-width: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
