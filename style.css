@@ -45,6 +45,39 @@ main {
   background-color: #fff;
 }
 
+/* Knappcontainer (centrerar knappen) */
+.button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Knappen på main - Lets collaborate */
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover-effekt */
+.btn:hover {
+  background-color: #00eaff;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Liten in-fade animation */
+.btn.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 .gallery {
   max-width: 900px;
   margin: 4rem auto;
