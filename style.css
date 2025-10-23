@@ -47,7 +47,7 @@ main {
 
 /* Knappcontainer (centrerar knappen) */
 .button-container {
-  text-align: center;
+  text-align: left;
   margin-top: 2rem;
 }
 
