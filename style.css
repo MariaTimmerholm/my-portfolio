@@ -78,6 +78,30 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
+.certificate {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.certificate h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.certificate img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
 .gallery {
   max-width: 900px;
   margin: 4rem auto;
