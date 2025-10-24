@@ -80,6 +80,13 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
+.project {
+  background-color: #DCDCDC;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
 .jagutanbg .content {
   display: flex;
   align-items: center;
