@@ -124,7 +124,7 @@ main {
 
 .gallery {
   max-width: 900px;
-  margin: 4rem auto;
+  margin: 8rem auto 4rem;
   padding: 0 1rem;
   text-align: center;
 }
