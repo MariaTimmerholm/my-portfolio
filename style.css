@@ -80,11 +80,22 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-.project {
+/* --- PROJECT IMAGES --- */
+.projects img {
+  display: inline-block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover-effekt (samma känsla som knappen) */
+.projects a:hover img {
   background-color: #DCDCDC;
   color: #000;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+  cursor: pointer;
 }
 
 .jagutanbg .content {
