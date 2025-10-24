@@ -22,6 +22,14 @@ header {
   text-align: center;
 }
 
+/* Hover-effekt */
+.header:hover {
+  background-color: #DCDCDC;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
 title {
     font-family: 'Pacifico', sans-serif;
 }
@@ -60,7 +68,7 @@ main {
 
 /* Hover-effekt */
 .btn:hover {
-  background-color: #00eaff;
+  background-color: #DCDCDC;
   color: #000;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
