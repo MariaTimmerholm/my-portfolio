@@ -121,13 +121,13 @@ main {
   margin-top: 2rem;
 }
 
-.pitch h3 {
+.pdf h3 {
   font-size: 1.5rem;
   color: #222;
   margin-bottom: 1rem;
 }
 
-.pitch img {
+.pdf img {
   width: 50%;
   max-width: 150px;
   border-radius: 12px;
@@ -135,7 +135,7 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pitch img:hover {
+.pdf img:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
