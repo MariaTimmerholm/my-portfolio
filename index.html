@@ -14,7 +14,7 @@
 <body>
   <div class="overlay">
     <!-- HEADER -->
-    <header class="fade-in delay-1">
+    <header class="fade-in delay-1 fade-section">
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -24,7 +24,7 @@
       </nav>
     </header>
     <!-- MAIN -->
-    <main class="fade-in delay-2">
+    <main class="fade-in delay-2 fade-section">
       <!-- HERO-DEL -->
       <section class="container my-5">
         <div class="row align-items-center">
@@ -40,7 +40,7 @@
         </div>
       </section>
       <!-- PROJECTS-DEL -->
-      <section class="projects shadow-sm p-3 mb-5 bg-body-tertiary rounded fade-in delay-2">
+      <section class="projects shadow-sm p-3 mb-5 bg-body-tertiary rounded fade-in delay-2 fade-section">
         <div class="container mt-4 text-center">
           <h2 class="mb-4">Projects</h2>
           <div class="row">
@@ -67,9 +67,22 @@
       </section>
     </main>
     <!-- FOOTER -->
-    <footer class="fade-in delay-3">
+    <footer class="fade-in delay-3 fade-section">
       &copy; 2025 Maria Timmerholm
     </footer>
+    <script>
+      const sections = document.querySelectorAll('.fade-section');
+    
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+    
+      sections.forEach(section => observer.observe(section));
+    </script>
   </div>
 </body>
 </html>
