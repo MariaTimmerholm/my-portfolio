@@ -1,59 +1,49 @@
+/* === GRUNDSTILAR === */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 2rem;
-  color: #333;
+  padding: 0;
   line-height: 1.6;
-  background-colour: #36454F;
+  background-color: #000; /* 🖤 svart bakgrund för hela sidan */
+  color: #333;
 }
 
-.about {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about p {
-  margin-bottom: 1.2rem;
-}
-
-header {
-  color: #fff;
-  padding: 1rem;
+/* === HEADER & FOOTER === */
+header, footer {
+  background-color: #000; /* svart */
+  color: #fff; /* vit text */
   text-align: center;
-}
-
-/* Hover-effekt */
-.header:hover {
-  background-color: #DCDCDC;
-  color: #000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-title {
-    font-family: 'Impact', sans-serif;
+  padding: 1.5rem 0;
 }
 
 nav a {
-  margin: 0 15px;
   color: #fff;
+  margin: 0 15px;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-main {
+nav a:hover {
+  color: #ccc;
+}
+
+/* === INNEHÅLLSRUTOR === */
+main, .projects, .about, .contact {
+  background-color: #fff; /* 🤍 vit bakgrund */
+  color: #000; /* svart text */
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 2rem auto;
   padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* Knappcontainer (centrerar knappen) */
+/* === KNAPP === */
 .button-container {
   text-align: left;
   margin-top: 2rem;
 }
 
-/* Knappen på main - Lets collaborate */
 .btn {
   display: inline-block;
   background-color: #333;
@@ -66,7 +56,6 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover-effekt */
 .btn:hover {
   background-color: #DCDCDC;
   color: #000;
@@ -80,7 +69,7 @@ main {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-/* --- PROJECT IMAGES --- */
+/* === PROJECTS === */
 .projects img {
   display: inline-block;
   border-radius: 8px;
@@ -88,14 +77,48 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover-effekt (samma känsla som knappen) */
 .projects a:hover img {
   background-color: #DCDCDC;
-  color: #000;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   filter: brightness(1.05);
   cursor: pointer;
+}
+
+/* === ANIMATIONER === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.5s; }
+.delay-3 { animation-delay: 1.0s; }
+
+/* === FADE-IN + ZOOM PÅ SCROLL === */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98); /* startar lite längre ner och lite mindre */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* prestandaoptimering */
+}
+
+/* När sektionen syns */
+.fade-section.visible {
+  opacity: 1;
+  transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1.05), 
+            transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.05);
 }
 
 .jagutanbg .content {
@@ -212,30 +235,3 @@ main {
   color: #333;
   text-decoration: none;
 }
-
-footer {
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.5s; }
-.delay-3 { animation-delay: 1.0s; }
