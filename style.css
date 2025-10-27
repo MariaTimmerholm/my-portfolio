@@ -102,10 +102,6 @@ main, .projects, .about, .contact {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.5s; }
-.delay-3 { animation-delay: 1.0s; }
-
 /* === FADE-IN + ZOOM PÅ SCROLL === */
 .fade-section {
   opacity: 0;
