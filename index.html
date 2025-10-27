@@ -70,19 +70,7 @@
     <footer class="fade-in delay-3 fade-section">
       &copy; 2025 Maria Timmerholm
     </footer>
-    <script>
-      const sections = document.querySelectorAll('.fade-section');
-    
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.2 });
-    
-      sections.forEach(section => observer.observe(section));
-    </script>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
