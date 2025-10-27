@@ -25,23 +25,77 @@
     <main class="fade-in delay-2 fade-section">
       <h2>Packages and Prints</h2>
       <p>My huge love for Nordic minimalism is showing in a lot of my own projects.</p>
-      <div class="gallery">
-        <h2>Timmerholm - package design for a plate</h2>
+    <!-- BOOTSTRAP COLLAPSE - TRE SEKTIONER -->
+    <section class="packages-section container my-5">
+      <h2 class="mb-3">Timmerholm - package design for a plate</h2>
+      <p>My huge love for Nordic minimalism is showing in a lot of my own projects.</p>
+      <!-- Knappar i rad -->
+      <div class="d-flex gap-2 mb-4 flex-wrap">
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#uppdrag" aria-expanded="false" aria-controls="uppdrag">
+          Uppdrag
+        </button>
+    
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#koncept" aria-expanded="false" aria-controls="koncept">
+          Konceptidé
+        </button>
+    
+        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#resultat" aria-expanded="false" aria-controls="resultat">
+          Resultat
+        </button>
       </div>
-        <div class="dropdown-menu p-4 text-body-secondary" style="max-width: 200px;">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Uppdrag
-          </button>
-        <div class="gallery-grid">
-          <img src="images/fp1.jpg" alt="Förpackning 1">
-          <img src="images/fp2.jpg" alt="Förpackning 2">
-        <div class="pdf">
-          <h3>Pitch</h3>
-          <a href="files/Pitch.pdf" target="_blank" class="btn">View Pitch (PDF)</a>
-        </div>
-          <img src="images/photo3.jpg" alt="Photo 3">
+    
+      <!-- Collapse - Uppdrag -->
+      <div class="collapse mb-4" id="uppdrag">
+        <div class="card card-body">
+          <div class="row g-3 align-items-start">
+            <div class="col-md-6">
+              <h3>Uppdrag</h3>
+              <p>Här beskriver du uppdraget — mål, målgrupp och begränsningar. Kort och tydligt.</p>
+              <p>Exempel: Design av förpackning för tallrik i porslin, fokus på hållbarhet och minimal estetik.</p>
+            </div>
+            <div class="col-md-6">
+              <img src="images/fp1.jpg" alt="Förpackning 1" class="img-fluid rounded mb-2">
+              <img src="images/fp2.jpg" alt="Förpackning 2" class="img-fluid rounded">
+            </div>
+          </div>
         </div>
       </div>
+    
+      <!-- Collapse - Konceptidé -->
+      <div class="collapse mb-4" id="koncept">
+        <div class="card card-body">
+          <div class="row g-3 align-items-start">
+            <div class="col-md-6 order-md-2"> <!-- bild till höger på desktop -->
+              <h3>Konceptidé</h3>
+              <p>Beskriv konceptidén här — varför du valde formspråk, färger och material.</p>
+              <p>Exempel: Enkel palett, grafiska element inspirerade av nordiska mönster.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <img src="images/concept1.jpg" alt="Konceptbild 1" class="img-fluid rounded mb-2">
+              <img src="images/concept2.jpg" alt="Konceptbild 2" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Collapse - Resultat -->
+      <div class="collapse mb-4" id="resultat">
+        <div class="card card-body">
+          <div class="row g-3 align-items-start">
+            <div class="col-md-6">
+              <h3>Resultat</h3>
+              <p>Här visar du slutresultatet, produktfoton och reflektioner.</p>
+              <p>Exempel: Prototyp, tryckfärdiga filer och feedback från testpanel.</p>
+              <a href="files/Pitch.pdf" class="btn btn-outline-dark mt-2" target="_blank">View Pitch (PDF)</a>
+            </div>
+            <div class="col-md-6">
+              <img src="images/result1.jpg" alt="Resultatbild 1" class="img-fluid rounded mb-2">
+              <img src="images/result2.jpg" alt="Resultatbild 2" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
     <footer class="fade-in delay-3 fade-section">
       &copy; 2025 Maria Timmerholm
