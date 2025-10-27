@@ -27,75 +27,89 @@
       <p>My huge love for Nordic minimalism is showing in a lot of my own projects.</p>
     <!-- BOOTSTRAP COLLAPSE - TRE SEKTIONER -->
     <section class="packages-section container my-5">
-      <h2 class="mb-3">Timmerholm - package design for a plate</h2>
-      <p>My huge love for Nordic minimalism is showing in a lot of my own projects.</p>
-      <!-- Knappar i rad -->
-      <div class="d-flex gap-2 mb-4 flex-wrap">
-        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#uppdrag" aria-expanded="false" aria-controls="uppdrag">
-          Uppdrag
-        </button>
-    
-        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#koncept" aria-expanded="false" aria-controls="koncept">
-          Konceptidé
-        </button>
-    
-        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#resultat" aria-expanded="false" aria-controls="resultat">
-          Resultat
-        </button>
-      </div>
-    
-      <!-- Collapse - Uppdrag -->
-      <div class="collapse mb-4" id="uppdrag">
-        <div class="card card-body">
-          <div class="row g-3 align-items-start">
-            <div class="col-md-6">
-              <h3>Uppdrag</h3>
-              <p>Här beskriver du uppdraget — mål, målgrupp och begränsningar. Kort och tydligt.</p>
-              <p>Exempel: Design av förpackning för tallrik i porslin, fokus på hållbarhet och minimal estetik.</p>
-            </div>
-            <div class="col-md-6">
-              <img src="images/fp1.jpg" alt="Förpackning 1" class="img-fluid rounded mb-2">
-              <img src="images/fp2.jpg" alt="Förpackning 2" class="img-fluid rounded">
+    <h2 class="mb-3">Timmerholm – package design for a plate</h2>
+    <p>My huge love for Nordic minimalism is showing in a lot of my own projects.</p>
+  
+    <div class="accordion" id="projectAccordion">
+      <!-- Uppdrag -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingUppdrag">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseUppdrag" aria-expanded="false" aria-controls="collapseUppdrag">
+            Uppdrag
+          </button>
+        </h2>
+        <div id="collapseUppdrag" class="accordion-collapse collapse"
+          aria-labelledby="headingUppdrag" data-bs-parent="#projectAccordion">
+          <div class="accordion-body">
+            <div class="row g-3 align-items-start">
+              <div class="col-md-6">
+                <h3>Uppdrag</h3>
+                <p>Här beskriver du uppdraget — mål, målgrupp och begränsningar. Kort och tydligt.</p>
+                <p>Exempel: Design av förpackning för tallrik i porslin, fokus på hållbarhet och minimal estetik.</p>
+              </div>
+              <div class="col-md-6">
+                <img src="images/fp1.jpg" alt="Förpackning 1" class="img-fluid rounded mb-2">
+                <img src="images/fp2.jpg" alt="Förpackning 2" class="img-fluid rounded">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    
-      <!-- Collapse - Konceptidé -->
-      <div class="collapse mb-4" id="koncept">
-        <div class="card card-body">
-          <div class="row g-3 align-items-start">
-            <div class="col-md-6 order-md-2"> <!-- bild till höger på desktop -->
-              <h3>Konceptidé</h3>
-              <p>Beskriv konceptidén här — varför du valde formspråk, färger och material.</p>
-              <p>Exempel: Enkel palett, grafiska element inspirerade av nordiska mönster.</p>
-            </div>
-            <div class="col-md-6 order-md-1">
-              <img src="images/concept1.jpg" alt="Konceptbild 1" class="img-fluid rounded mb-2">
-              <img src="images/concept2.jpg" alt="Konceptbild 2" class="img-fluid rounded">
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Collapse - Resultat -->
-      <div class="collapse mb-4" id="resultat">
-        <div class="card card-body">
-          <div class="row g-3 align-items-start">
-            <div class="col-md-6">
-              <h3>Resultat</h3>
-              <p>Här visar du slutresultatet, produktfoton och reflektioner.</p>
-              <p>Exempel: Prototyp, tryckfärdiga filer och feedback från testpanel.</p>
-              <a href="files/Pitch.pdf" class="btn btn-outline-dark mt-2" target="_blank">View Pitch (PDF)</a>
-            </div>
-            <div class="col-md-6">
-              <img src="images/result1.jpg" alt="Resultatbild 1" class="img-fluid rounded mb-2">
-              <img src="images/result2.jpg" alt="Resultatbild 2" class="img-fluid rounded">
+  
+      <!-- Konceptidé -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingKoncept">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseKoncept" aria-expanded="false" aria-controls="collapseKoncept">
+            Konceptidé
+          </button>
+        </h2>
+        <div id="collapseKoncept" class="accordion-collapse collapse"
+          aria-labelledby="headingKoncept" data-bs-parent="#projectAccordion">
+          <div class="accordion-body">
+            <div class="row g-3 align-items-start">
+              <div class="col-md-6 order-md-2">
+                <h3>Konceptidé</h3>
+                <p>Beskriv konceptidén här — varför du valde formspråk, färger och material.</p>
+                <p>Exempel: Enkel palett, grafiska element inspirerade av nordiska mönster.</p>
+              </div>
+              <div class="col-md-6 order-md-1">
+                <img src="images/concept1.jpg" alt="Konceptbild 1" class="img-fluid rounded mb-2">
+                <img src="images/concept2.jpg" alt="Konceptbild 2" class="img-fluid rounded">
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+  
+      <!-- Resultat -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingResultat">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseResultat" aria-expanded="false" aria-controls="collapseResultat">
+            Resultat
+          </button>
+        </h2>
+        <div id="collapseResultat" class="accordion-collapse collapse"
+          aria-labelledby="headingResultat" data-bs-parent="#projectAccordion">
+          <div class="accordion-body">
+            <div class="row g-3 align-items-start">
+              <div class="col-md-6">
+                <h3>Resultat</h3>
+                <p>Här visar du slutresultatet, produktfoton och reflektioner.</p>
+                <a href="files/Pitch.pdf" class="btn btn-outline-dark mt-2" target="_blank">View Pitch (PDF)</a>
+              </div>
+              <div class="col-md-6">
+                <img src="images/result1.jpg" alt="Resultatbild 1" class="img-fluid rounded mb-2">
+                <img src="images/result2.jpg" alt="Resultatbild 2" class="img-fluid rounded">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     </main>
     <footer class="fade-in delay-3 fade-section">
       &copy; 2025 Maria Timmerholm
