@@ -34,7 +34,7 @@ nav a:hover {
 
 /* === INNEHÅLLSRUTOR === */
 main, .projects, .about, .contact {
-  background-color: #fff; /* 🤍 vit bakgrund */
+  background-color: none;
   color: #000; /* svart text */
   border-radius: 12px;
   max-width: 1000px;
