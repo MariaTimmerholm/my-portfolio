@@ -10,7 +10,6 @@ body {
 
 /* === HEADER & FOOTER === */
 header, footer {
-  background-color: #000; /* svart */
   color: #fff; /* vit text */
   text-align: center;
   padding: 1.5rem 0;
