@@ -198,40 +198,6 @@ main, .projects, .about, .contact {
   object-fit: cover;
 }
 
----- CONTACT ----
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 2rem auto;
-  gap: 1rem;
-}
-
-.contact-form label {
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
-}
-
-.contact-form button {
-  background-color: #333;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #555;
-}
-
 .social-links {
   margin-top: 2rem;
   text-align: center;
