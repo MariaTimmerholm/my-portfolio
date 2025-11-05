@@ -10,13 +10,13 @@ body {
 
 /* === HEADER === */
 header {
-  color: #000000; /* vit text */
+  color: #000; /* vit text */
   text-align: center;
   padding: 1.5rem 0;
 }
 
 footer {
-  color: #000000; /* vit text */
+  color: #000; /* vit text */
   text-align: left;
   padding: 1.5rem 0;
 }
