@@ -43,37 +43,6 @@ main, .projects, .about, .contact {
   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-/* === KNAPP === */
-.button-container {
-  text-align: left;
-  margin-top: 2rem;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.btn:hover {
-  background-color: #DCDCDC;
-  color: #000;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-/* Liten in-fade animation */
-.btn.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
 .accordion-button {
   background-color: #333;
   color: #fff;
