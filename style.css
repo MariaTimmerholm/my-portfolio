@@ -8,10 +8,16 @@ body {
   color: #333;
 }
 
-/* === HEADER & FOOTER === */
-header, footer {
-  color: #fff; /* vit text */
+/* === HEADER === */
+header {
+  color: #000000; /* vit text */
   text-align: center;
+  padding: 1.5rem 0;
+}
+
+footer {
+  color: #000000; /* vit text */
+  text-align: left;
   padding: 1.5rem 0;
 }
 
