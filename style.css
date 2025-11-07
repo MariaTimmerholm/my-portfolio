@@ -131,9 +131,10 @@ main, .projects, .about, .contact {
   line-height: 1.6;
 }
 
-.expertise {
+.expertise p {
   font-size: 16px;
 }
+
 .pitch {
   text-align: center;
   margin-top: 2rem;
