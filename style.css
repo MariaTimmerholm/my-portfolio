@@ -28,7 +28,7 @@ nav a:hover {
 }
 
 /* === INNEHÅLLSRUTOR === */
-main, .projects, .about, .contact, .footer {
+main, .projects, .about, .contact, {
   background-color: none;
   color: #000; /* svart text */
   border-radius: 12px;
