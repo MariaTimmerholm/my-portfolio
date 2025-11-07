@@ -1,5 +1,5 @@
 /* === GRUNDSTILAR === */
-body, .footer {
+body, {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ nav a:hover {
 }
 
 /* === INNEHÅLLSRUTOR === */
-main, .projects, .about, .contact {
+main, .projects, .about, .contact, .footer {
   background-color: none;
   color: #000; /* svart text */
   border-radius: 12px;
