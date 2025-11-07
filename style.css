@@ -130,7 +130,10 @@ main, .projects, .about, .contact {
   max-width: 500px;
   line-height: 1.6;
 }
-  
+
+.expertise {
+  font-size: 16px;
+}
 .pitch {
   text-align: center;
   margin-top: 2rem;
