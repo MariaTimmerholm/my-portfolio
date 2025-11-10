@@ -128,32 +128,35 @@ main, .projects, .about, .contact, {
 .image-wrapper {
   position: relative;
   display: inline-block;
+  text-align: center;
   overflow: hidden;
 }
 
+/* Bilden är 30 % av sin tidigare storlek */
 .profile-image {
-  max-width: 40%;
+  width: 30%;
   height: auto;
   border-radius: 12px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Dold overlay som visas vid hover */
+/* Overlay som täcker hela bilden */
 .pdf-overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 35%; /* centrerar overlay över den mindre bilden */
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4); /* lätt mörk ton över bilden */
+  background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 12px;
 }
 
+/* Knappen visas vid hover */
 .pdf-overlay .btn {
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
@@ -168,7 +171,7 @@ main, .projects, .about, .contact, {
   color: white;
 }
 
-/* Hover-effekt: visa overlay och lätt zooma bilden */
+/* Hover-effekt */
 .image-wrapper:hover .pdf-overlay {
   opacity: 1;
 }
