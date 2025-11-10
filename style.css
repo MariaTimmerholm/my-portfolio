@@ -4,6 +4,7 @@ body, {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  border-radius: 12px;
   background-color: #FFEFD5; 
 }
 
@@ -12,12 +13,14 @@ header {
   color: #000; /* vit text */
   text-align: center;
   padding: 1.5rem 0;
+  border-radius: 12px;
 }
 
 nav a {
   color: #000;
   font-size: 1.5em;
   margin: 0 15px;
+  border-radius: 12px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
