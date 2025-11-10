@@ -116,13 +116,6 @@ main, .projects, .about, .contact, {
             transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.05);
 }
 
-.jagutanbg .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
 .jagutanbg img {
   width: 100%;
   max-width: 500px;
