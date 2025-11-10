@@ -116,19 +116,31 @@ main, .projects, .about, .contact, {
             transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.05);
 }
 
-.jagutanbg img {
-  width: 100%;
-  max-width: 500px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.expertise-content {
+  flex: 1;
 }
 
-.jagutanbg p {
-  max-width: 500px;
-  line-height: 1.6;
+.expertise-image img {
+  max-width: 180px; /* ändra värdet för att justera storlek */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.expertise p {
-  font-size: 16px;
+.expertise-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .col-4.d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .expertise-image {
+    margin-top: 1rem;
+  }
 }
 
 .pitch {
