@@ -9,9 +9,10 @@ body, {
 }
 
 p {
-  margin-top: 0.2em;   /* Minskar avstånd ovanför */
-  margin-bottom: 0.2em; /* Minskar avstånd under */
+  margin-top: 0.1em;   /* Minskar avstånd ovanför */
+  margin-bottom: 0.1em; /* Minskar avstånd under */
   padding: 0;          /* Tar bort extra padding om det finns */
+  font-size: 16px;
 }
 
 /* === HEADER === */
