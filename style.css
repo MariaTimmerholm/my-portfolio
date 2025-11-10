@@ -120,20 +120,6 @@ main, .projects, .about, .contact, {
   flex: 1;
 }
 
-.profile-image {
-  max-width: 250px; /* adjust as needed */
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .profile-image {
-    max-width: 180px;
-    margin-top: 1rem;
-  }
-}
-
 .pitch {
   text-align: center;
   margin-top: 2rem;
