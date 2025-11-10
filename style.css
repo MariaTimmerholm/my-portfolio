@@ -134,7 +134,7 @@ main, .projects, .about, .contact, {
 
 /* Bilden är 30 % av sin tidigare storlek */
 .profile-image {
-  width: 30%;
+  width: 50%;
   height: auto;
   border-radius: 12px;
   transition: transform 0.3s ease, opacity 0.3s ease;
