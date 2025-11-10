@@ -214,5 +214,10 @@ main, .projects, .about, .contact, {
   margin: 0 1rem;
   color: #333;
   text-decoration: none;
-  list-style-type: none;
 }
+
+  ul {
+      list-style-type: none; /* Tar bort prickarna */
+      margin: 0;             /* Tar bort standardmarginal */
+      padding: 0;            /* Tar bort standardpadding */
+  }
