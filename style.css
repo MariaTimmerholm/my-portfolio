@@ -208,4 +208,5 @@ main, .projects, .about, .contact, {
   margin: 0 1rem;
   color: #333;
   text-decoration: none;
+  list-style-type: none;
 }
