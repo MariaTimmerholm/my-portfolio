@@ -8,6 +8,12 @@ body, {
   background-color: #FFEFD5; 
 }
 
+p {
+  margin-top: 0.2em;   /* Minskar avstånd ovanför */
+  margin-bottom: 0.2em; /* Minskar avstånd under */
+  padding: 0;          /* Tar bort extra padding om det finns */
+}
+
 /* === HEADER === */
 header {
   color: #000; /* vit text */
