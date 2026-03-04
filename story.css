@@ -25,13 +25,15 @@ body {
 }
 
 .crawl {
-  width: 60%;
+  width: 70%;
   color: #feda4a;
-  font-size: 1.8rem;
-  line-height: 1.6;
+  font-size: clamp(2rem, 4vw, 3.5rem); /* responsiv */
+  line-height: 1.4;
   text-align: justify;
   transform-origin: 50% 100%;
   transform: rotateX(25deg) translateY(0);
+  opacity: 1;
+  transition: opacity 0.6s ease;
 }
 
 /* ===== ERA SECTIONS ===== */
