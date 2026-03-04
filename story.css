@@ -3,6 +3,7 @@ body {
   font-family: 'Inter', sans-serif;
   background: black;
   overflow-x: hidden;
+  transition: background 0.8s ease, color 0.8s ease;
 }
 /* ===== STAR WARS WRAPPER ===== */
 .starwars-wrapper {
@@ -81,3 +82,83 @@ body {
 .archive-grid a:hover {
   letter-spacing: 2px;
 }
+
+/* ===== ERA SECTIONS ===== */
+
+.era {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.era-content {
+  max-width: 700px;
+}
+
+/* ===== ERA STYLES ===== */
+
+/* Modernism */
+.era-1 {
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Postmodernism */
+.era-2 {
+  color: #fff;
+  font-family: 'Georgia', serif;
+}
+
+/* Digital */
+.era-3 {
+  color: #00f5ff;
+  font-family: 'Courier New', monospace;
+}
+
+body.modernism {
+  background: #f4f4f4;
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+body.postmodernism {
+  background: #ff006e;
+  color: #fff;
+  font-family: 'Georgia', serif;
+}
+
+body.digital {
+  background: #000814;
+  color: #00f5ff;
+  font-family: 'Courier New', monospace;
+}
+
+const eras = document.querySelectorAll(".era");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.body.className = "";
+
+        if (entry.target.classList.contains("era-1")) {
+          document.body.classList.add("modernism");
+        }
+
+        if (entry.target.classList.contains("era-2")) {
+          document.body.classList.add("postmodernism");
+        }
+
+        if (entry.target.classList.contains("era-3")) {
+          document.body.classList.add("digital");
+        }
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+eras.forEach((era) => observer.observe(era));
