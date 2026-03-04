@@ -59,6 +59,22 @@ body {
 
 /* ===== BODY STYLE STATES ===== */
 
+body.industrialism { 
+  background: #1a1a1a; /* sotig fabrikskänsla */ 
+  color: #e0e0e0; /* smutsigt ljusgrått */ 
+  font-family: "Roboto Slab", serif; /* tung, industriell typografi */ 
+  letter-spacing: 0.5px; /* lite hårdare känsla */ 
+  transition: background 0.6s ease, color 0.6s ease; 
+} 
+
+body.industrialism .story-text { 
+  color: #e0e0e0; 
+}
+
+body.industrialism .accent { 
+  color: #c49b66; /* mässing/koppar */ 
+}
+
 body.modernism {
   background: #f4f4f4;
   color: #111;
