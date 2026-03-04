@@ -72,6 +72,14 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+
+        // Ta bort aktiva klasser
+        eras.forEach(e => e.classList.remove("active"));
+
+        // Lägg till aktiv på rätt era
+        entry.target.classList.add("active");
+
+        // Byt body-stil
         document.body.className = "";
 
         if (entry.target.classList.contains("era-1")) {
