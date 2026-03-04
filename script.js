@@ -15,26 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== STAR WARS SCROLL EFFECT =====
 
-const scrollSection = document.querySelector(".scroll-section");
-const crawl = document.querySelector(".crawl");
-
-window.addEventListener("scroll", () => {
-  const sectionTop = scrollSection.offsetTop;
-  const sectionHeight = scrollSection.offsetHeight;
-  const scrollY = window.scrollY;
-
-  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-    const progress = (scrollY - sectionTop) / sectionHeight;
-    const translateY = progress * -200; 
-    const translateZ = progress * -800;
-
-    crawl.style.transform = `
-      rotateX(25deg)
-      translateY(${translateY}px)
-      translateZ(${translateZ}px)
-    `;
-  }
-});
+const texts = document.querySelectorAll(".story-text"); 
+function updateOpacity() { 
+  const center = window.innerHeight / 2; 
+  
+  texts.forEach(text => { 
+    const rect = text.getBoundingClientRect(); 
+    const distance = Math.abs(rect.top + rect.height / 2 - center); 
+    
+    // Justera fade-effekten 
+    const maxDistance = 300; 
+    let opacity = 1 - distance / maxDistance; 
+    
+    opacity = Math.max(opacity, 0.15); // min-grå 
+    opacity = Math.min(opacity, 1); // max-ljus 
+    
+    text.style.opacity = opacity; 
+  }); 
+} 
+window.addEventListener("scroll", updateOpacity); 
+updateOpacity();
 
 const firstEra = document.querySelector(".era-1");
 
