@@ -62,7 +62,7 @@ body {
 body.industrialism { 
   background: #1a1a1a; /* sotig fabrikskänsla */ 
   color: #e0e0e0; /* smutsigt ljusgrått */ 
-  font-family: "Roboto Slab", serif; /* tung, industriell typografi */ 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", sans-serif;
 } 
 
 body.modernism {
