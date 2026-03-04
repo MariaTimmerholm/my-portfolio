@@ -86,7 +86,7 @@ const observer = new IntersectionObserver(
         document.body.className = "";
 
         if (entry.target.classList.contains("era-1")) {
-          document.body.classList.add("industrialism");
+          document.body.classList.add("Industrialism");
         }
         
         if (entry.target.classList.contains("era-2")) {
