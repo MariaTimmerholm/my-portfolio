@@ -96,6 +96,10 @@ const observer = new IntersectionObserver(
         if (entry.target.classList.contains("era-3")) {
           document.body.classList.add("digital");
         }
+        
+        if (entry.target.classList.contains("era-4")) {
+          document.body.classList.add("digital");
+        }
       }
     });
   },
