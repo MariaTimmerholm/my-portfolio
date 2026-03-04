@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 const texts = document.querySelectorAll(".story-text"); 
 
 function updateOpacity() { 
-  const center = window.innerHeight / 2; 
+  const center = window.innerHeight * 0.5; // exakt mittpunkt
   
   texts.forEach(text => { 
     const rect = text.getBoundingClientRect(); 
-    const distance = Math.abs(rect.top + rect.height / 2 - center); 
+    const distance = Math.abs((rect.top + rect.height / 2) - center); 
     
     // Justera fade-effekten 
-    const maxDistance = 350; 
+    const maxDistance = 320; 
     let opacity = 1 - distance / maxDistance; 
 
-    if (distance < 40) opacity = 1; // gör texten helt vit i centrum
+    if (distance < 35) opacity = 1; // helt vit text i centrum
     
     opacity = Math.max(opacity, 0.35); // min-grå 
     opacity = Math.min(opacity, 1); // max-ljus 
