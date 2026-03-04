@@ -239,3 +239,92 @@ main, .projects, .about, .contact, {
       margin: 0;             /* Tar bort standardmarginal */
       padding: 0;            /* Tar bort standardpadding */
   }
+
+/* TIDSLINJE OCH EPOKER */
+.intro {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: black;
+}
+
+.intro h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+.intro p {
+  opacity: 0.7;
+}
+
+.timeline {
+  perspective: 800px;
+}
+
+.panel {
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotateX(15deg);
+  transform-origin: bottom;
+  transition: all 0.6s ease;
+}
+
+.era1 {
+  background: #1a1a1a;
+  font-family: 'Georgia', serif;
+}
+
+.era2 {
+  background: white;
+  color: black;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.era3 {
+  background: #000814;
+  font-family: 'Courier New', monospace;
+  color: #00f5ff;
+}
+/*Panel content animation*/
+.panel-content {
+  max-width: 700px;
+  opacity: 0.4;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.panel:hover .panel-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*Landing - övergång till portfolio*/
+.landing {
+  background: white;
+  color: black;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.archive-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.archive-grid a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+.archive-grid a:hover {
+  letter-spacing: 2px;
+}
