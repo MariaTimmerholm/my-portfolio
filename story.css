@@ -84,6 +84,16 @@ body.digital {
 }
 
 /* === PROJECTS === */
+.projects {
+  background-color: none;
+  color: #000; /* svart text */
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
 .projects img {
   display: inline-block;
   border-radius: 8px;
