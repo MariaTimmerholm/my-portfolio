@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===== STAR WARS SCROLL EFFECT =====
 
 const texts = document.querySelectorAll(".story-text"); 
+
 function updateOpacity() { 
   const center = window.innerHeight / 2; 
   
