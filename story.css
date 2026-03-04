@@ -12,7 +12,7 @@ body {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
-  padding: 200vh 0; /* extra space för scroll */ 
+  padding: 120vh 0; /* kompakt space för scroll */ 
 } 
 
 .story-text { 
