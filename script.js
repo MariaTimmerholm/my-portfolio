@@ -27,6 +27,8 @@ function updateOpacity() {
     // Justera fade-effekten 
     const maxDistance = 800; 
     let opacity = 1 - distance / maxDistance; 
+
+    if (distance < 50) opacity = 1; // gör texten helt vit i centrum
     
     opacity = Math.max(opacity, 0.15); // min-grå 
     opacity = Math.min(opacity, 1); // max-ljus 
