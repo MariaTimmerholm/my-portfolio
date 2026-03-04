@@ -72,8 +72,8 @@ body.modernism {
 }
 
 body.postmodernism {
-  background: #ff006e;
-  color: white;
+  background: #00A6FB; /*Memphis-räreösen, en känsla av 80-talet*/
+  color: #111; 
   font-family: 'Georgia', serif;
 }
 
