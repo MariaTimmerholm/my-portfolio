@@ -25,7 +25,7 @@ function updateOpacity() {
     const distance = Math.abs(rect.top + rect.height / 2 - center); 
     
     // Justera fade-effekten 
-    const maxDistance = 300; 
+    const maxDistance = 800; 
     let opacity = 1 - distance / maxDistance; 
     
     opacity = Math.max(opacity, 0.15); // min-grå 
