@@ -132,7 +132,7 @@ main, .projects, .about, .contact {
   overflow: hidden;
 }
 
-/* Bilden är 30 % av sin tidigare storlek */
+/* Bilden är 50 % av sin tidigare storlek */
 .profile-image {
   width: 50%;
   height: auto;
@@ -145,7 +145,7 @@ main, .projects, .about, .contact {
   position: absolute;
   top: 0;
   left: 35%; /* centrerar overlay över den mindre bilden */
-  width: 30%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
