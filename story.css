@@ -144,3 +144,8 @@ body.digital {
 .project-img:hover .btn {
   transform: translateY(0);
 }
+
+.expertise {
+  position: sticky;
+  top: 100px;
+}
