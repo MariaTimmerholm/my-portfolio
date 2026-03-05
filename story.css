@@ -85,51 +85,58 @@ body.digital {
 
 /* === PROJECTS === */
 .projects {
-  background-color: none;
-  color: #000; /* svart text */
+  color: #000;
   border-radius: 12px;
   max-width: 1000px;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-.projects img {
+/* wrapper runt bilden */
+.project-img {
+  position: relative;
   display: inline-block;
+}
+
+/* bildens stil (som du redan har) */
+.projects img {
+  display: block;
   border-radius: 8px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.projects a:hover img {
-  background-color: #DCDCDC;
+/* hover-effekt */
+.project-img:hover img {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
   filter: brightness(1.05);
-  cursor: pointer;
 }
 
-/* Overlay som täcker hela bilden */
+/* overlay */
 .pdf-overlay {
   position: absolute;
   top: 0;
-  left: 50%; /* centrerar overlay över bilden */
-  width: 50%;
+  left: 0;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 12px;
 }
 
-/* Knappen visas vid hover */
+/* visa overlay vid hover */
+.project-img:hover .pdf-overlay {
+  opacity: 1;
+}
+
+/* knapp */
 .pdf-overlay .btn {
-  border: none;
-  padding: 10px 18px;
   border-radius: 8px;
+  padding: 10px 18px;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
 }
