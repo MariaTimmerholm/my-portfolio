@@ -69,6 +69,7 @@ body.digital {
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  transition: opacity 0.6s ease;
 }
 
 .era-content {
@@ -81,6 +82,10 @@ body.digital {
 .era.active .era-content {
   transform: scale(1.2);
   opacity: 1;
+}
+
+.era:not(.active) {
+  opacity: 0.5;
 }
 
 /* === PROJECTS === */
