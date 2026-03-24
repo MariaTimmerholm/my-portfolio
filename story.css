@@ -12,7 +12,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   z-index: 9999;
   overflow: hidden;
@@ -50,7 +50,7 @@ body {
 /* INTRO TITLE */
 .big-title {
   font-family: 'Foda Display', serif; 
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +60,7 @@ body {
 }
 
 /* När sidan laddat */
-body.loaded .show-title .big-title {
+body..show-title .big-title {
   opacity: 1;
 }
 main, footer {
@@ -129,7 +129,7 @@ body.digital {
 /* ===== SCROLL SECTION SLUT===== */
 /* ===== ERA SECTIONS ===== */
 .era {
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +146,7 @@ body.digital {
 }
 
 .era.active .era-content {
-  transform: scale(1.05);
+  transform: scale(1.2);
   opacity: 1;
 }
 
