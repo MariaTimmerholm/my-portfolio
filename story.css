@@ -24,13 +24,13 @@ body {
   transition: transform 1.2s ease-in-out;
 }
 
-.panel.left { 
+.panel-left { 
   background: ##00f5ff;
 }
-.panel.center { 
+.panel-center { 
   background: #7b2ff7; 
 }
-.panel.right { 
+.panel-right { 
   background: #ff4ecd; 
 }
 
