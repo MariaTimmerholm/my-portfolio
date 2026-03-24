@@ -53,6 +53,7 @@ body.loaded footer {
   opacity: 1;
   transition: opacity 1.2s ease;
 }
+
 /* INTRO TITLE */
 .intro-title {
   position: absolute;
@@ -65,13 +66,13 @@ body.loaded footer {
   -webkit-background-clip: text;
   color: transparent;
   z-index: 10000;
-  opacity: 1;
-  transition: opacity 0.8s ease;
+  opacity: 0;
+  transition: opacity 1s ease;
   pointer-events: none;
 }
 
 /* När sidan laddat */
-body.loaded .intro-title {
+body.loaded show-title .intro-title {
   opacity: 1;
 }
 main, footer {
