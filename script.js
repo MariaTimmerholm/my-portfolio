@@ -110,6 +110,7 @@ eras.forEach((era) => observer.observe(era));
 
 window.addEventListener("load", () => {
   document.querySelector(".intro").classList.add("animate");
+  document.querySelector(".intro-title").style.opacity = 0;
 
   setTimeout(() => {
     document.body.classList.add("loaded");
