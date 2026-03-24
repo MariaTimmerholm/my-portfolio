@@ -62,7 +62,7 @@ body {
 }
 
 /* När sidan laddat */
-body..show-title .big-title {
+body.show-title .big-title {
   opacity: 1;
 }
 main, footer {
