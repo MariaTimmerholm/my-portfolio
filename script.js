@@ -1,8 +1,12 @@
-// Fade-in på scroll med Intersection Observer
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".fade-section");
 
-  const observer = new IntersectionObserver(entries => {
+  const sections = document.querySelectorAll(".fade-section");
+  const scrollSection = document.querySelector(".story-container");
+  const crawl = document.querySelector(".crawl");
+  const firstEra = document.querySelector(".era-1");
+
+  // Fade observer
+  const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
@@ -10,114 +14,108 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.2 });
 
-  sections.forEach(section => observer.observe(section));
-});
+  sections.forEach(section => fadeObserver.observe(section));
 
-// ===== STAR WARS SCROLL EFFECT =====
+  // TEXT FADE
+  const texts = document.querySelectorAll(".story-text");
 
-const texts = document.querySelectorAll(".story-text"); 
+  function updateOpacity() {
+    const center = window.innerHeight * 0.5;
 
-function updateOpacity() { 
-  const center = window.innerHeight * 0.5; // exakt mittpunkt
-  
-  texts.forEach(text => { 
-    const rect = text.getBoundingClientRect(); 
-    const distance = Math.abs((rect.top + rect.height / 2) - center); 
-    
-    // Justera fade-effekten 
-    const maxDistance = 320; 
-    let opacity = 1 - distance / maxDistance; 
+    texts.forEach(text => {
+      const rect = text.getBoundingClientRect();
+      const distance = Math.abs((rect.top + rect.height / 2) - center);
 
-    if (distance < 35) opacity = 1; // helt vit text i centrum
-    
-    opacity = Math.max(opacity, 0.35); // min-grå 
-    opacity = Math.min(opacity, 1); // max-ljus 
-    
-    text.style.opacity = opacity; 
-  }); 
-} 
-window.addEventListener("scroll", updateOpacity); 
-updateOpacity();
+      const maxDistance = 320;
+      let opacity = 1 - distance / maxDistance;
 
-const firstEra = document.querySelector(".era-1");
+      if (distance < 35) opacity = 1;
 
-window.addEventListener("scroll", () => {
-  const sectionTop = scrollSection.offsetTop;
-  const sectionHeight = scrollSection.offsetHeight;
-  const scrollY = window.scrollY;
+      opacity = Math.max(opacity, 0.35);
+      opacity = Math.min(opacity, 1);
 
-  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-    const progress = (scrollY - sectionTop) / sectionHeight;
-    const translateY = progress * -300;
-    const translateZ = progress * -1000;
-
-    crawl.style.transform = `
-      rotateX(25deg)
-      translateY(${translateY}px)
-      translateZ(${translateZ}px)
-    `;
-
-    // Fade ut mot slutet
-    crawl.style.opacity = 1 - progress * 1.5;
+      text.style.opacity = opacity;
+    });
   }
 
-  // När första eran börjar → döda crawlen helt
-  if (scrollY >= firstEra.offsetTop - window.innerHeight / 2) {
-    crawl.style.opacity = 0;
-  }
-});
+  // SCROLL (ALLT i samma!)
+  window.addEventListener("scroll", () => {
 
+    updateOpacity();
+
+    if (!scrollSection || !crawl || !firstEra) return;
+
+    const scrollY = window.scrollY;
+    const sectionTop = scrollSection.offsetTop;
+    const sectionHeight = scrollSection.offsetHeight;
+
+    if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+      const progress = (scrollY - sectionTop) / sectionHeight;
+
+      crawl.style.transform = `
+        rotateX(25deg)
+        translateY(${progress * -300}px)
+        translateZ(${progress * -1000}px)
+      `;
+
+      crawl.style.opacity = Math.max(1 - progress * 1.5, 0);
+    }
+
+    if (scrollY >= firstEra.offsetTop - window.innerHeight / 2) {
+      crawl.style.opacity = 0;
+    }
+  });
+
+});
 // ===== ERA STYLE SWITCH =====
 
 const eras = document.querySelectorAll(".era");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+const eraObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
 
-        // Ta bort aktiva klasser
-        eras.forEach(e => e.classList.remove("active"));
+      // ta bort gamla
+      eras.forEach(era => era.classList.remove("active"));
 
-        // Lägg till aktiv på rätt era
-        entry.target.classList.add("active");
+      // lägg till ny
+      entry.target.classList.add("active");
 
-        // Byt body-stil
-        document.body.className = "";
-        
-        if (entry.target.classList.contains("era-1")) {
-          document.body.classList.add("industrialism");
-        }
-        
-        if (entry.target.classList.contains("era-2")) {
-          document.body.classList.add("modernism");
-        }
+      document.body.classList.remove(
+        "industrialism",
+        "modernism",
+        "postmodernism",
+        "digital"
+      );
 
-        if (entry.target.classList.contains("era-3")) {
-          document.body.classList.add("postmodernism");
-        }
-        
-        if (entry.target.classList.contains("era-4")) {
-          document.body.classList.add("digital");
-        }
+      if (entry.target.classList.contains("era-1")) {
+        document.body.classList.add("industrialism");
       }
-    });
-  },
-  { threshold: 0.6 }
-);
+      if (entry.target.classList.contains("era-2")) {
+        document.body.classList.add("modernism");
+      }
+      if (entry.target.classList.contains("era-3")) {
+        document.body.classList.add("postmodernism");
+      }
+      if (entry.target.classList.contains("era-4")) {
+        document.body.classList.add("digital");
+      }
+    }
+  });
+}, { threshold: 0.6 });
+
+// VIKTIGT (utanför!)
+eras.forEach(era => eraObserver.observe(era));
 
 window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+
   const intro = document.querySelector(".intro");
 
-  // Starta panel-animationen
   intro.classList.add("animate");
 
-  // Efter panelerna glidit bort
   setTimeout(() => {
     intro.style.display = "none";
-
-    // Visa titeln EFTER introt
     document.body.classList.add("show-title");
-
-  }, 1500); // matchar din panel-animationstid
+  }, 1500);
 });
