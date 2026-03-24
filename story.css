@@ -12,7 +12,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   z-index: 9999;
   overflow: hidden;
@@ -47,24 +47,15 @@ body {
   transform: translateY(-100%);
 }
 
-/* Fade-in av innehållet */
-body.loaded main,
-body.loaded footer {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-}
-
 /* INTRO TITLE */
 .big-title {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  transition: opacity 0.6s ease;
   transition: opacity 1s ease;
-  pointer-events: none;
 }
 
 /* När sidan laddat */
@@ -72,7 +63,14 @@ body.loaded .show-title .big-title {
   opacity: 1;
 }
 main, footer {
+  opacity: 0;
+}
+
+/* Fade-in av innehållet */
+body.loaded main,
+body.loaded footer {
   opacity: 1;
+  transition: opacity 1.2s ease;
 }
 /* ===== INTRO ANIMATION SLUT =====*/
 /* ===== BODY STYLE STATES ===== */
@@ -130,7 +128,7 @@ body.digital {
 /* ===== SCROLL SECTION SLUT===== */
 /* ===== ERA SECTIONS ===== */
 .era {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +145,7 @@ body.digital {
 }
 
 .era.active .era-content {
-  transform: scale(1.2);
+  transform: scale(1.05);
   opacity: 1;
 }
 
@@ -167,7 +165,6 @@ body.digital {
   width: 100%;
   overflow: hidden;
   border-radius: 8px;
-  width: 100%;
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -242,4 +239,9 @@ body.digital {
 .expertise {
   position: sticky;
   top: 100px;
+}
+
+:root {
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.6s ease;
 }
