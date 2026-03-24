@@ -53,7 +53,6 @@ body.loaded footer {
   opacity: 1;
   transition: opacity 1.2s ease;
 }
-css
 /* INTRO TITLE */
 .intro-title {
   position: absolute;
@@ -73,10 +72,10 @@ css
 
 /* När sidan laddat */
 body.loaded .intro-title {
-  opacity: 0;
+  opacity: 1;
 }
 main, footer {
-  opacity: 0;
+  opacity: 1;
 }
 /* ===== INTRO ANIMATION SLUT =====*/
 /* ===== BODY STYLE STATES ===== */
