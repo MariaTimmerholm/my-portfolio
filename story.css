@@ -55,24 +55,18 @@ body.loaded footer {
 }
 
 /* INTRO TITLE */
-.intro-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
+.big-title {
+  font-size: 48px;
   font-weight: 700;
+  text-align: center;
+  margin-top: 40px;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #00f5ff, #7b2ff7, #ff4ecd);
   -webkit-background-clip: text;
   color: transparent;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 1s ease;
-  pointer-events: none;
 }
-
 /* När sidan laddat */
-body.loaded show-title .intro-title {
+body.loaded show-title .big-title {
   opacity: 1;
 }
 main, footer {
