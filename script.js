@@ -83,12 +83,8 @@ const observer = new IntersectionObserver(
         entry.target.classList.add("active");
 
         // Byt body-stil
-        document.body.classList.remove("industrialism", "modernism", "postmodernism", "digital");
-
-        if (entry.target.classList.contains("big-title")) {
-          document.body.classList.add("industrialism");
-        }
-
+        document.body.className = "";
+        
         if (entry.target.classList.contains("era-1")) {
           document.body.classList.add("industrialism");
         }
