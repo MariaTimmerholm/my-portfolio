@@ -56,19 +56,17 @@ body.loaded footer {
 
 /* INTRO TITLE */
 .big-title {
-  position: fixed;        /* ligger ovanpå allt */
-  top: 50%;               /* mitten vertikalt */
-  left: 50%;              /* mitten horisontellt */
-  transform: translate(-50%, -50%); /* perfekt centrerad */
-  font-size: 48px;
-  font-weight: 700;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white;
-  z-index: 9000;          /* ovanför allt annat */
-  opacity: 0;             /* start osynlig */
+  padding: 2rem;
+  transition: opacity 0.6s ease;
   transition: opacity 1s ease;
   pointer-events: none;
 }
+
 /* När sidan laddat */
 body.loaded .show-title .big-title {
   opacity: 1;
