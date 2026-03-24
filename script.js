@@ -107,3 +107,12 @@ const observer = new IntersectionObserver(
 );
 
 eras.forEach((era) => observer.observe(era));
+
+window.addEventListener("load", () => {
+  document.querySelector(".intro").classList.add("animate");
+
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+    document.querySelector(".intro").style.display = "none";
+  }, 1500);
+});
