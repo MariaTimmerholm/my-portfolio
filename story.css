@@ -44,7 +44,26 @@ body.loaded footer {
   opacity: 1;
   transition: opacity 1.2s ease;
 }
+css
+/* INTRO TITLE */
+.intro-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
 
+/* När sidan laddat */
+body.loaded .intro-title {
+  opacity: 0;
+}
 main, footer {
   opacity: 0;
 }
