@@ -106,14 +106,18 @@ const observer = new IntersectionObserver(
   { threshold: 0.6 }
 );
 
-eras.forEach((era) => observer.observe(era));
-
 window.addEventListener("load", () => {
-  document.querySelector(".intro").classList.add("animate");
-  document.querySelector(".intro-title").style.opacity = 0;
+  const intro = document.querySelector(".intro");
 
+  // Starta panel-animationen
+  intro.classList.add("animate");
+
+  // Efter panelerna glidit bort
   setTimeout(() => {
-    document.body.classList.add("loaded");
-    document.querySelector(".intro").style.display = "none";
-  }, 1500);
+    intro.style.display = "none";
+
+    // Visa titeln EFTER introt
+    document.body.classList.add("show-title");
+
+  }, 1500); // matchar din panel-animationstid
 });
