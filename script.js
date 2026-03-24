@@ -85,6 +85,10 @@ const observer = new IntersectionObserver(
         // Byt body-stil
         document.body.className = "";
 
+        if (entry.target.classList.contains("big-title")) {
+          document.body.classList.add("industrialism");
+        }
+
         if (entry.target.classList.contains("era-1")) {
           document.body.classList.add("industrialism");
         }
