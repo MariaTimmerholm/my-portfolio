@@ -20,9 +20,18 @@ body {
 
 .panel {
   flex: 1;
-  background: black; /* byt färg om du vill */
   transform: translateY(0);
   transition: transform 1.2s ease-in-out;
+}
+
+.panel.left { 
+  background: ##00f5ff;
+}
+.panel.center { 
+  background: #7b2ff7; 
+}
+.panel.right { 
+  background: #ff4ecd; 
 }
 
 /* Animation när sidan laddar */
@@ -53,7 +62,9 @@ css
   transform: translate(-50%, -50%);
   font-size: 4rem;
   font-weight: 700;
-  color: white;
+  background: linear-gradient(90deg, #00f5ff, #7b2ff7, #ff4ecd);
+  -webkit-background-clip: text;
+  color: transparent;
   z-index: 10000;
   opacity: 1;
   transition: opacity 0.8s ease;
