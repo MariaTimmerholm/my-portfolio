@@ -1,28 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const sections = document.querySelectorAll(".fade-section");
+  const texts = document.querySelectorAll(".story-text");
   const scrollSection = document.querySelector(".story-container");
   const crawl = document.querySelector(".crawl");
   const firstEra = document.querySelector(".era-1");
+  const eras = document.querySelectorAll(".era");
 
-  // Fade observer
-  const fadeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
+  // Fade-in för sektioner
+  if (sections.length > 0) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
 
-  sections.forEach(section => fadeObserver.observe(section));
+    sections.forEach((section) => fadeObserver.observe(section));
+  }
 
-  // TEXT FADE
-  const texts = document.querySelectorAll(".story-text");
-
+  // Fade på story-text
   function updateOpacity() {
+    if (texts.length === 0) return;
+
     const center = window.innerHeight * 0.5;
 
-    texts.forEach(text => {
+    texts.forEach((text) => {
       const rect = text.getBoundingClientRect();
       const distance = Math.abs((rect.top + rect.height / 2) - center);
 
@@ -38,9 +41,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // SCROLL (ALLT i samma!)
-  window.addEventListener("scroll", () => {
+  // Era-observer
+  if (eras.length > 0) {
+    const eraObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
+        eras.forEach((era) => era.classList.remove("active"));
+        entry.target.classList.add("active");
+
+        document.body.classList.remove(
+          "industrialism",
+          "modernism",
+          "postmodernism",
+          "digital"
+        );
+
+        if (entry.target.classList.contains("era-1")) {
+          document.body.classList.add("industrialism");
+        } else if (entry.target.classList.contains("era-2")) {
+          document.body.classList.add("modernism");
+        } else if (entry.target.classList.contains("era-3")) {
+          document.body.classList.add("postmodernism");
+        } else if (entry.target.classList.contains("era-4")) {
+          document.body.classList.add("digital");
+        }
+      });
+    }, { threshold: 0.6 });
+
+    eras.forEach((era) => eraObserver.observe(era));
+  }
+
+  // Scroll-effekter
+  window.addEventListener("scroll", () => {
     updateOpacity();
 
     if (!scrollSection || !crawl || !firstEra) return;
@@ -66,64 +99,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Kör en gång direkt om story-text finns
+  updateOpacity();
 });
-// ===== ERA STYLE SWITCH =====
 
-const eras = document.querySelectorAll(".era");
-
-const eraObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-
-      // ta bort gamla
-      eras.forEach(era => era.classList.remove("active"));
-
-      // lägg till ny
-      entry.target.classList.add("active");
-
-      document.body.classList.remove(
-        "industrialism",
-        "modernism",
-        "postmodernism",
-        "digital"
-      );
-
-      if (entry.target.classList.contains("era-1")) {
-        document.body.classList.add("industrialism");
-      }
-      if (entry.target.classList.contains("era-2")) {
-        document.body.classList.add("modernism");
-      }
-      if (entry.target.classList.contains("era-3")) {
-        document.body.classList.add("postmodernism");
-      }
-      if (entry.target.classList.contains("era-4")) {
-        document.body.classList.add("digital");
-      }
-    }
-  });
-}, { threshold: 0.6 });
-
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+// Hindra browsern från att minnas scroll-position
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
-});
-
-// VIKTIGT (utanför!)
-eras.forEach(era => eraObserver.observe(era));
-
-window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 
   const intro = document.querySelector(".intro");
 
-  intro.classList.add("animate");
+  if (intro) {
+    intro.classList.add("animate");
 
-  setTimeout(() => {
-    intro.style.display = "none";
-    document.body.classList.add("show-title");
-  }, 1500);
+    setTimeout(() => {
+      intro.style.display = "none";
+      document.body.classList.add("show-title");
+    }, 1500);
+  }
 });

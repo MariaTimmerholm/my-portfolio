@@ -4,7 +4,6 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  border-radius: 12px;
   background-color: #e4e4e4; 
 }
 
@@ -37,14 +36,15 @@ nav a:hover {
 }
 
 /* === INNEHÅLLSRUTOR === */
-main, .projects, .about, .contact {
-  background-color: none;
-  color: #000; /* svart text */
-  border-radius: 12px;
+main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.projects, .about, .contact {
+  color: #000;
+  border-radius: 12px;
 }
 
 .accordion-button {
@@ -96,8 +96,9 @@ main, .projects, .about, .contact {
 /* När sektionen syns */
 .fade-section.visible {
   opacity: 1;
+  transform: translateY(0) scale(1);
   transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1.05), 
-            transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.05);
+              transform 1s cubic-bezier(0.25, 0.1, 0.25, 1.05);
 }
 
 .expertise-content {
@@ -134,16 +135,15 @@ main, .projects, .about, .contact {
 .project-img {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 350px;
   overflow: hidden;
   border-radius: 8px;
 }
 
-/* bild */
 .project-img img {
   width: 100%;
-  height: 250px; /* välj höjd själv */
-  object-fit: cover; /* MAGIC */
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease, filter 0.4s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -242,8 +242,8 @@ main, .projects, .about, .contact {
   text-decoration: none;
 }
 
-  ul {
-      list-style-type: none; /* Tar bort prickarna */
-      margin: 0;             /* Tar bort standardmarginal */
-      padding: 0;            /* Tar bort standardpadding */
-  }
+.social-links ul {
+  list-style: none; /* tar bort standardlist-stil */
+  margin: 0;
+  padding: 0;
+}
