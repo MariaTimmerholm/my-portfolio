@@ -5,7 +5,7 @@ body {
   padding: 0;
   line-height: 1.6;
   border-radius: 12px;
-  background-color: #FFEFD5; 
+  background-color: #e4e4e4; 
 }
 
 p {
@@ -140,34 +140,42 @@ main, .projects, .about, .contact {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Overlay som täcker hela bilden */
+/* overlay */
 .pdf-overlay {
   position: absolute;
-  top: 0;
-  left: 35%; /* centrerar overlay över den mindre bilden */
-  width: 50%;
-  height: 100%;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+
+  background: rgba(0,0,0,0.45);
+
   opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 12px;
+  transition: opacity 0.35s ease;
 }
 
-/* Knappen visas vid hover */
+/* hover-effekt */
+.project-img:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.8);
+}
+
+.project-img:hover .pdf-overlay {
+  opacity: 1;
+}
+
+/* knapp */
 .pdf-overlay .btn {
-  border: none;
-  padding: 10px 18px;
   border-radius: 8px;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  padding: 10px 20px;
+  font-weight: 500;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
 }
 
-.pdf-overlay .btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+/* knapp animation */
+.project-img:hover .btn {
+  transform: translateY(0);
 }
 
 /* Hover-effekt */
