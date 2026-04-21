@@ -262,6 +262,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
   // Stop autoscroll if user interacts manually
   window.addEventListener(
     "wheel",

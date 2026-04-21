@@ -104,6 +104,14 @@ const eraObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.6 });
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
 // VIKTIGT (utanför!)
 eras.forEach(era => eraObserver.observe(era));
 
