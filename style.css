@@ -68,22 +68,6 @@ main, .projects, .about, .contact {
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* === PROJECTS === */
-.projects img {
-  display: inline-block;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.projects a:hover img {
-  background-color: #DCDCDC;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  filter: brightness(1.05);
-  cursor: pointer;
-}
-
 /* === ANIMATIONER === */
 @keyframes fadeInUp {
   0% {
@@ -140,6 +124,28 @@ main, .projects, .about, .contact {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.projects {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* wrapper */
+.project-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* bild */
+.project-img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
 /* overlay */
 .pdf-overlay {
   position: absolute;
@@ -176,15 +182,6 @@ main, .projects, .about, .contact {
 /* knapp animation */
 .project-img:hover .btn {
   transform: translateY(0);
-}
-
-/* Hover-effekt */
-.image-wrapper:hover .pdf-overlay {
-  opacity: 1;
-}
-
-.image-wrapper:hover .profile-image {
-  transform: scale(1.03);
 }
 
 .gallery {
