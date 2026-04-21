@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HCI Scrollytelling Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="hci.css" rel="stylesheet">
+</head>
+<body class="is-locked">
+
+  <!-- START OVERLAY -->
+  <div id="startOverlay" class="start-overlay" role="button" tabindex="0" aria-label="Klicka för att börja">
+    <div class="start-overlay-inner">
+      <p class="overlay-kicker">Klicka för att börja</p>
+      <h1>Human Computer Interaction</h1>
+      <p class="overlay-text">
+        En ljudbaserad scrollytelling om hur människans interaktion med datorer har förändrats 
+        över tid.
+      </p>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="audio/background.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="eraAudio" preload="auto"></audio>
+
+  <!-- LEFT CONTROL PANEL -->
+  <aside class="control-panel hidden" id="controlPanel">
+    <h2>Kontroller</h2>
+    <label class="control-item">
+      <input type="checkbox" id="toggleSound" checked />
+      <span>Ljud</span>
+    </label>
+    <label class="control-item">
+      <input type="checkbox" id="toggleAutoscroll" />
+      <span>Auto scroll</span>
+    </label>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="mainContent">
+    <section class="story-section intro active-section" 
+    data-era="intro"
+    data-audio="audio/intro.webm" 
+    data-duration="18000">
+      <div class="section-inner">
+        <p class="section-tag">Intro</p>
+        <h1>Human Computer Interaction</h1>
+        <p class="lead">
+          Från hålkort till multimodala gränssnitt. Scrolla själv eller välj autoscroll högst upp i vänster hörn för att ta dig
+           igenom epokerna och utforska hur interaktionen mellan människa och dator har förändrats.
+        </p>
+      </div>
+    </section>
+    <section class="story-section era era-1" 
+      data-era="no-interaction"
+      data-audio="audio/no-interaction.webm"
+      data-duration="22000">
+      <div class="section-inner">
+        <p class="section-tag">Epok 1</p>
+        <h2>No Interaction Era</h2>
+        <p class="years">≈ 1940–1960</p>
+        <p>
+          Datorn är inte något användare kan interagera med direkt. 
+          Instruktioner förbereds i förväg och resultatet kommer långt senare, ofta som utskrift.
+          Det innebär att datorn är mer av en svart låda — något mystiskt och avlägset, snarare än ett verktyg eller en partner i interaktion.
+        </p>
+      </div>
+    </section>
+    <section class="story-section era era-2" 
+      data-era="command"
+      data-audio="audio/command.webm"
+      data-duration="25000">
+      <div class="section-grid">
+        <div class="section-copy"></div>
+          <p class="section-tag">Epok 2</p>
+          <h2>Command Era</h2>
+          <p class="years">≈ 1960–1980</p>
+          <p>
+            Det är nu som interaktionen blir mer direkt. 
+            Med tangentbord och terminaler kan användare skriva kommandon och få respons i realtid.
+            Det är fortfarande en ganska teknisk och krävande interaktion, men det är en stor förändring jämfört med tidigare. 
+            Datorn börjar bli mer av ett verktyg, även om det fortfarande krävs mycket kunskap och träning hos användaren för att använda det effektivt.
+          </p>
+        </div>
+        <div class="section-media">
+          <div class="image-holder image-holder-large">
+            <img src="images/teletype.jpg" alt="Teletype terminal">
+          </div>
+          <div class="image-holder">
+            <img src="images/crt.jpg" alt="CRT terminal">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="story-section era era-3" 
+      data-era="gui"
+      data-audio="audio/gui.webm"
+      data-duration="20000">
+      <div class="section-inner">
+        <p class="section-tag">Epok 3</p>
+        <h2>GUI Era</h2>
+        <p class="years">≈ 1980–2007</p>
+        <p>
+          Tillkomst av grafiska gränssnitt gör datorn mer visuell, tillgänglig och lättare att förstå. 
+          Fönster, ikoner, menyer och musen förändrar allt och gör det möjligt för fler människor att använda datorer utan att behöva lära sig kommandon.
+          Detta är en stor demokratisering av tekniken.
+        </p>
+      </div>
+    </section>
+    <section class="story-section era era-4" 
+      data-era="touch"
+      data-audio="audio/touch.webm"
+      data-duration="26000">
+      <div class="section-inner">
+        <p class="section-tag">Epok 4</p>
+        <h2>Touch Era</h2>
+        <p class="years">≈ 2007–2015</p>
+        <p>
+          Interaktion blir fysisk där avnändare kan använda sina fingrar för att interagera med skärmen. 
+          Fingrar ersätter därmed pekare och gränssnittet upplevs mer som något direkt manipulerbart. 
+          Användare kan nu svepa, nypa och trycka på skärmen, vilket gör interaktionen mer intuitiv och tillgänglig för en ännu bredare publik.
+        </p>
+      </div>
+    </section>
+    <section class="story-section era era-5" 
+      data-era="multimodal"
+      data-audio="audio/multimodal.webm"
+      data-duration="25000">
+      <div class="section-inner">
+        <p class="section-tag">Epok 5</p>
+        <h2>Multimodal Era</h2>
+        <p class="years">≈ 2015–nu</p>
+        <p>
+          Interaktion sker nu genom flera kanaler samtidigt. Det kan vara röst, blick, rörelse, touch och AI. 
+          Gränssnittet blir allt mer osynligt. Och det är inte längre bara verktyg — det är en del av vår omgivning.
+          Det har flera konsekvenser, både positiva och negativa, för hur vi upplever och förhåller oss till tekniken.
+        </p>
+      </div>
+    </section>
+    <section class="story-section outro" 
+    data-era="outro" 
+    data-audio="audio/outro.webm"
+    data-duration="20000">
+      <div class="section-inner">
+        <p class="section-tag">Outro</p>
+        <h2>Vad kommer härnäst?</h2>
+        <p>
+          När interaktion blir mer naturlig och mer osynlig förändras inte bara verktygen — 
+          utan också relationen mellan människa och teknik. Många designers funderar nu på var gränsen går mellan det som är mänskligt och det som är tekniskt, 
+          och hur vi kan skapa en mer hållbar och etisk interaktion i framtiden.
+        </p>
+      </div>
+    </section>
+  </main>
+  <script src="script3.js"></script>
+</body>
+</html>
