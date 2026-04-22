@@ -42,8 +42,12 @@ nav a:hover {
 main {
   max-width: 1000px;
   margin: 2rem auto;
-  padding: 2rem;
   flex: 1;
+  padding: 0;
+}
+
+section {
+  padding: 1,5rem;
 }
 
 .projects, .about, .contact {
@@ -130,16 +134,14 @@ main {
 }
 
 .projects {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
+  max-width: 1400px;
 }
 
 /* wrapper */
 .project-img {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -237,7 +239,6 @@ main {
 
 .social-links {
   margin-top: 2rem;
-  text-align: center;
 }
 
 .social-links a {
